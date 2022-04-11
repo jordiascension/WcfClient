@@ -7,6 +7,7 @@
       <xsd:import schemaLocation="http://localhost:2143/StudentWebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:2143/StudentWebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CustomValidations" />
       <xsd:import schemaLocation="http://localhost:2143/StudentWebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Vueling.Distributed.WebServices.Contracts" />
+      <xsd:import schemaLocation="http://localhost:2143/StudentWebService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Vueling.Distributed.WebServices.Model" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IStudentWebService_GetData_InputMessage">
@@ -33,6 +34,15 @@
   <wsdl:message name="IStudentWebService_GetDataUsingDataContract_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
   </wsdl:message>
+  <wsdl:message name="IStudentWebService_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="IStudentWebService_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentWebService_Add_ValidationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://www.microsoft.com/practices/EnterpriseLibrary/2007/01/wcf/validation" name="detail" element="q3:ValidationFault" />
+  </wsdl:message>
   <wsdl:portType name="IStudentWebService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IStudentWebService/GetData" message="tns:IStudentWebService_GetData_InputMessage" />
@@ -47,6 +57,11 @@
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IStudentWebService/GetDataUsingDataContract" message="tns:IStudentWebService_GetDataUsingDataContract_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStudentWebService/GetDataUsingDataContractResponse" message="tns:IStudentWebService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentWebService/Add" message="tns:IStudentWebService_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentWebService/AddResponse" message="tns:IStudentWebService_Add_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IStudentWebService/AddValidationFaultFault" name="ValidationFaultFault" message="tns:IStudentWebService_Add_ValidationFaultFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="Http" type="tns:IStudentWebService">
@@ -83,6 +98,18 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/IStudentWebService/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ValidationFaultFault">
+        <soap:fault use="literal" name="ValidationFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="StudentWebService">

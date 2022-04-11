@@ -23,6 +23,25 @@ namespace VuelingClientWcf
         private void Form1_Load(object sender, EventArgs e)
         {
             WebReference.IStudentWebService svc = new WebReference.StudentWebServiceClient();
+            MessageBox.Show(svc.GetData(2, "Test Log").ToString());
+
+
+            try
+            {
+                WebReference.User user = new WebReference.User();
+                svc.Add(user);
+                MessageBox.Show("User Added");
+
+            }
+            catch (FaultException<ValidationFault> ex)
+            {
+                foreach (var details in ex.Detail.Details)
+                {
+                    MessageBox.Show(details.Message);
+                }
+            }
+
+
             try
             {
                 

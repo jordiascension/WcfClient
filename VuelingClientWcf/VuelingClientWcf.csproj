@@ -89,7 +89,13 @@
     <None Include="Connected Services\WebReference\StudentWebService4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WebReference\StudentWebService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\WebReference\VuelingClientWcf.WebReference.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebReference\VuelingClientWcf.WebReference.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">

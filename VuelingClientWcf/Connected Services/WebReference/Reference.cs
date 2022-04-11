@@ -197,6 +197,83 @@ namespace VuelingClientWcf.WebReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/Vueling.Distributed.WebServices.Model")]
+    [System.SerializableAttribute()]
+    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SurnameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Surname {
+            get {
+                return this.SurnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
+                    this.SurnameField = value;
+                    this.RaisePropertyChanged("Surname");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WebReference.IStudentWebService")]
     public interface IStudentWebService {
@@ -220,6 +297,13 @@ namespace VuelingClientWcf.WebReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentWebService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IStudentWebService/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<VuelingClientWcf.WebReference.CompositeType> GetDataUsingDataContractAsync(VuelingClientWcf.WebReference.CompositeType composite);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentWebService/Add", ReplyAction="http://tempuri.org/IStudentWebService/AddResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(VuelingClientWcf.WebReference.ValidationFault), Action="http://tempuri.org/IStudentWebService/AddValidationFaultFault", Name="ValidationFault", Namespace="http://www.microsoft.com/practices/EnterpriseLibrary/2007/01/wcf/validation")]
+        VuelingClientWcf.WebReference.User Add(VuelingClientWcf.WebReference.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStudentWebService/Add", ReplyAction="http://tempuri.org/IStudentWebService/AddResponse")]
+        System.Threading.Tasks.Task<VuelingClientWcf.WebReference.User> AddAsync(VuelingClientWcf.WebReference.User user);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -271,6 +355,14 @@ namespace VuelingClientWcf.WebReference {
         
         public System.Threading.Tasks.Task<VuelingClientWcf.WebReference.CompositeType> GetDataUsingDataContractAsync(VuelingClientWcf.WebReference.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
+        }
+        
+        public VuelingClientWcf.WebReference.User Add(VuelingClientWcf.WebReference.User user) {
+            return base.Channel.Add(user);
+        }
+        
+        public System.Threading.Tasks.Task<VuelingClientWcf.WebReference.User> AddAsync(VuelingClientWcf.WebReference.User user) {
+            return base.Channel.AddAsync(user);
         }
     }
 }
