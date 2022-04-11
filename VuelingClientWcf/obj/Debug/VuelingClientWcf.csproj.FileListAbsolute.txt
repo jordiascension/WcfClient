@@ -1,0 +1,11 @@
+C:\Users\jordi\Documents\VuelingClientWcf\VuelingClientWcf\bin\Debug\VuelingClientWcf.exe.config
+C:\Users\jordi\Documents\VuelingClientWcf\VuelingClientWcf\bin\Debug\VuelingClientWcf.exe
+C:\Users\jordi\Documents\VuelingClientWcf\VuelingClientWcf\bin\Debug\VuelingClientWcf.pdb
+C:\Users\jordi\Documents\VuelingClientWcf\VuelingClientWcf\obj\Debug\VuelingClientWcf.csproj.AssemblyReference.cache
+C:\Users\jordi\Documents\VuelingClientWcf\VuelingClientWcf\obj\Debug\VuelingClientWcf.csproj.SuggestedBindingRedirects.cache
+C:\Users\jordi\Documents\VuelingClientWcf\VuelingClientWcf\obj\Debug\VuelingClientWcf.Form1.resources
+C:\Users\jordi\Documents\VuelingClientWcf\VuelingClientWcf\obj\Debug\VuelingClientWcf.Properties.Resources.resources
+C:\Users\jordi\Documents\VuelingClientWcf\VuelingClientWcf\obj\Debug\VuelingClientWcf.csproj.GenerateResource.cache
+C:\Users\jordi\Documents\VuelingClientWcf\VuelingClientWcf\obj\Debug\VuelingClientWcf.csproj.CoreCompileInputs.cache
+C:\Users\jordi\Documents\VuelingClientWcf\VuelingClientWcf\obj\Debug\VuelingClientWcf.exe
+C:\Users\jordi\Documents\VuelingClientWcf\VuelingClientWcf\obj\Debug\VuelingClientWcf.pdb
