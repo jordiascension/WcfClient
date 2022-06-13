@@ -26,7 +26,7 @@ namespace VuelingClientWcf
             MessageBox.Show(svc.GetData(2, "Test Log").ToString());
 
 
-            try
+            /*try
             {
                 WebReference.User user = new WebReference.User();
                 svc.Add(user);
@@ -66,7 +66,7 @@ namespace VuelingClientWcf
                 {
                     MessageBox.Show(details.Message);
                 }
-            }
+            }*/
 
 
         }
